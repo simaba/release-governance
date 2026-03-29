@@ -1,0 +1,22 @@
+{
+  "feature_name": "IVI voice assistant",
+  "release_id": "example-2026-03",
+  "risk_inputs": {
+    "safety_impact": 4,
+    "regulatory_exposure": 4,
+    "uncertainty_sensitivity": 4,
+    "operational_complexity": 4,
+    "observability_maturity": 3,
+    "fallback_readiness": 4
+  },
+  "evidence": {
+    "domain_and_data_coverage": true,
+    "uncertainty_handling": true,
+    "fallback_and_degraded_mode": true,
+    "monitoring_and_observability": true,
+    "human_escalation_and_override": true,
+    "incident_response_and_recovery": false,
+    "accountability_signoff": false,
+    "post_release_review_plan": true
+  }
+}
