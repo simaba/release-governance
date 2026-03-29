@@ -1,0 +1,22 @@
+{
+  "feature_name": "ADAS lane intervention assistant",
+  "release_id": "example-high-risk-2026-03",
+  "risk_inputs": {
+    "safety_impact": 5,
+    "regulatory_exposure": 5,
+    "uncertainty_sensitivity": 5,
+    "operational_complexity": 4,
+    "observability_maturity": 2,
+    "fallback_readiness": 2
+  },
+  "evidence": {
+    "domain_and_data_coverage": true,
+    "uncertainty_handling": true,
+    "fallback_and_degraded_mode": false,
+    "monitoring_and_observability": true,
+    "human_escalation_and_override": true,
+    "incident_response_and_recovery": false,
+    "accountability_signoff": false,
+    "post_release_review_plan": true
+  }
+}
