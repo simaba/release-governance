@@ -134,4 +134,4 @@ Full mapping: [docs/nist-rmf-mapping.md](docs/nist-rmf-mapping.md)
 | [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-ai-rmf-implementation-guide) | NIST AI RMF practitioner guide |
 | [awesome-ai-governance](https://github.com/simaba/awesome-ai-governance) | Curated governance resources |
 
-*Maintained by [Sima Bagheri](https://github.com/simaba) · Connect on [LinkedIn](https://www.linkedin.com/in/simabagheri)*
+*Maintained by [Sima Bagheri](https://github.com/simaba) · Connect on [LinkedIn](https://www.linkedin.com/in/simaba/)*
