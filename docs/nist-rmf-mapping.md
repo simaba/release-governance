@@ -4,7 +4,7 @@ This document maps the content in this repository to the corresponding
 NIST AI Risk Management Framework (AI RMF 1.0) functions, categories,
 and subcategories.
 
-**Full NIST AI RMF implementation guide:** [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-ai-rmf-implementation-guide)
+**Full NIST AI RMF implementation guide:** [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-rmf-guide)
 
 ---
 
@@ -63,7 +63,7 @@ and subcategories.
 ## EU AI Act Alignment
 
 For organizations subject to the EU AI Act, see the cross-reference mapping:
-[nist-ai-rmf-implementation-guide/docs/eu-ai-act-mapping.md](https://github.com/simaba/nist-ai-rmf-implementation-guide/blob/main/docs/eu-ai-act-mapping.md)
+[nist-ai-rmf-implementation-guide/docs/eu-ai-act-mapping.md](https://github.com/simaba/nist-rmf-guide/blob/main/docs/eu-ai-act-mapping.md)
 
 ---
 
