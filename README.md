@@ -2,7 +2,7 @@
 
 [![NIST AI RMF](https://img.shields.io/badge/NIST%20AI%20RMF-Aligned-0055A4?style=flat-square)](https://airc.nist.gov/home)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-[![Discussions](https://img.shields.io/badge/Discussions-Join-7289da?style=flat-square&logo=github)](https://github.com/simaba/ai-release-governance-framework/discussions)
+[![Discussions](https://img.shields.io/badge/Discussions-Join-7289da?style=flat-square&logo=github)](https://github.com/simaba/release-governance/discussions)
 
 A structured framework for governing the full release lifecycle of AI systems —
 from initial development through production deployment and ongoing monitoring —
@@ -119,9 +119,9 @@ Full mapping: [docs/nist-rmf-mapping.md](docs/nist-rmf-mapping.md)
 
 | Tool | Purpose | Link |
 |---|---|---|
-| `airc` CLI | Validate release checklist YAML from command line | [ai-release-readiness-checklist](https://github.com/simaba/ai-release-readiness-checklist) |
-| Regulated AI Starter Kit | Template repo with pre-configured governance | [regulated-ai-starter-kit](https://github.com/simaba/regulated-ai-starter-kit) |
-| Enterprise Governance Playbook | Full organizational governance playbook | [enterprise-ai-governance-playbook](https://github.com/simaba/enterprise-ai-governance-playbook) |
+| `airc` CLI | Validate release checklist YAML from command line | [ai-release-readiness-checklist](https://github.com/simaba/release-checklist) |
+| Regulated AI Starter Kit | Template repo with pre-configured governance | [regulated-ai-starter-kit](https://github.com/simaba/regulated-ai) |
+| Enterprise Governance Playbook | Full organizational governance playbook | [enterprise-ai-governance-playbook](https://github.com/simaba/governance-playbook) |
 
 ---
 
@@ -129,9 +129,9 @@ Full mapping: [docs/nist-rmf-mapping.md](docs/nist-rmf-mapping.md)
 
 | Repository | Purpose |
 |---|---|
-| [enterprise-ai-governance-playbook](https://github.com/simaba/enterprise-ai-governance-playbook) | End-to-end governance playbook |
-| [ai-release-readiness-checklist](https://github.com/simaba/ai-release-readiness-checklist) | Release gate framework + CLI |
-| [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-ai-rmf-implementation-guide) | NIST AI RMF practitioner guide |
-| [awesome-ai-governance](https://github.com/simaba/awesome-ai-governance) | Curated governance resources |
+| [enterprise-ai-governance-playbook](https://github.com/simaba/governance-playbook) | End-to-end governance playbook |
+| [ai-release-readiness-checklist](https://github.com/simaba/release-checklist) | Release gate framework + CLI |
+| [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-rmf-guide) | NIST AI RMF practitioner guide |
+| [awesome-ai-governance](https://github.com/simaba/ai-prism) | Curated governance resources |
 
 *Maintained by [Sima Bagheri](https://github.com/simaba) · Connect on [LinkedIn](https://www.linkedin.com/in/simaba/)*
