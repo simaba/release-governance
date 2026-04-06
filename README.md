@@ -1,103 +1,137 @@
 # AI Release Governance Framework
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/simaba/ai-release-governance-framework)](https://github.com/simaba/ai-release-governance-framework/commits/main)
-[![GitHub Stars](https://img.shields.io/github/stars/simaba/ai-release-governance-framework?style=social)](https://github.com/simaba/ai-release-governance-framework/stargazers)
+[![NIST AI RMF](https://img.shields.io/badge/NIST%20AI%20RMF-Aligned-0055A4?style=flat-square)](https://airc.nist.gov/home)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Discussions](https://img.shields.io/badge/Discussions-Join-7289da?style=flat-square&logo=github)](https://github.com/simaba/ai-release-governance-framework/discussions)
 
-A practical framework for **AI release readiness**, **risk-based gating**, and **accountability design** in regulated or safety-critical systems.
-
-This repository is intentionally documentation-first and lightweight — designed to be adapted, not just read.
-
-> **Start here:** see [`START_HERE.md`](START_HERE.md) for a guided entry point into the framework.
+A structured framework for governing the full release lifecycle of AI systems —
+from initial development through production deployment and ongoing monitoring —
+with specific guidance for regulated industries.
 
 ---
 
-## Why this matters
+## The Problem
 
-AI systems often fail in production not because the model is weak, but because:
+Most software release frameworks were not designed for AI systems. AI releases
+differ from traditional software releases in critical ways:
 
-- release processes are inherited from deterministic software
-- fallback and degraded-mode behaviour is under-specified
-- monitoring is insufficient
-- accountability is fragmented
+- **Non-deterministic behavior** — the same model can produce different outputs
+- **Data dependency** — model performance degrades as the world changes
+- **Emergent risks** — failure modes that were not anticipated during development
+- **Regulatory scrutiny** — AI decisions in regulated industries face legal accountability
+- **Stakeholder impact** — errors can affect individuals' health, finances, or rights
 
-This framework gives teams a structured way to release AI capabilities with clearer control, traceability, and operational confidence.
-
----
-
-## How it works
-
-```mermaid
-flowchart LR
-    A[Define risk inputs] --> B[Compute risk tier]
-    B --> C{Risk tier}
-    C -->|Low| D[Standard gates]
-    C -->|Medium| E[Enhanced gates
-+ accountability review]
-    C -->|High| F[Strict gates
-+ sign-off
-+ monitoring plan]
-    D & E & F --> G[Release approved]
-```
-
-**Risk inputs assessed:** safety impact · regulatory exposure · observability maturity · fallback readiness
-
-**Risk tiers:** Low / Medium / High — each with corresponding release gates, accountability requirements, and monitoring expectations.
+This framework addresses each of these differences with structured governance gates.
 
 ---
 
-## What's included
+## Framework Structure
 
 ```
-docs/
-  overview.md           # Framework overview and design rationale
-  risk-model.md         # Risk dimensions and tier definitions
-  release-gates.md      # Gate requirements by risk tier
-  accountability.md     # Human oversight and traceability design
-src/                    # Reference implementation (risk scoring scaffold)
-templates/              # Reusable artefacts for your team
-examples/               # Worked scenarios
-START_HERE.md           # Guided entry point
-CONTRIBUTING.md
-SECURITY.md
-CITATION.md             # How to cite this work
+AI Release Lifecycle
+│
+├── 1. PRE-DEVELOPMENT
+│   ├── Use case approval
+│   ├── Risk classification
+│   └── Data governance review
+│
+├── 2. DEVELOPMENT
+│   ├── Model card initiation
+│   ├── Bias evaluation plan
+│   └── Security threat model
+│
+├── 3. PRE-DEPLOYMENT (Release Gates)
+│   ├── Technical validation gate
+│   ├── Governance approval gate
+│   ├── Legal/compliance gate
+│   └── Infrastructure readiness gate
+│
+├── 4. DEPLOYMENT
+│   ├── Staged rollout plan
+│   ├── Monitoring activation
+│   └── Incident response readiness
+│
+└── 5. POST-DEPLOYMENT
+    ├── Performance monitoring
+    ├── Drift detection
+    ├── Periodic governance review
+    └── Retirement / decommissioning
 ```
 
 ---
 
-## Who this is for
+## Release Gates
 
-- AI platform and MLOps teams
-- Governance and risk leads in regulated industries
-- Product managers designing AI feature releases
-- Compliance and safety teams assessing AI deployments
+### Gate 1: Technical Validation
+
+| Check | Requirement | Tooling |
+|---|---|---|
+| Model performance | Meets accuracy/F1 threshold on holdout set | pytest, MLflow |
+| Bias evaluation | Disparate impact ratio ≥ 0.80 across subgroups | Fairlearn, AI Fairness 360 |
+| Adversarial testing | Red team report completed | Microsoft PyRIT, Giskard |
+| Latency / throughput | P99 latency ≤ SLA threshold under load | Locust, k6 |
+| Security scan | No critical vulnerabilities in dependencies | Snyk, Dependabot |
+
+### Gate 2: Governance Approval
+
+| Check | Approver | Documentation Required |
+|---|---|---|
+| AI governance review | AI Governance Lead | Signed governance checklist |
+| Risk assessment complete | Risk Officer | Risk register entry |
+| Model card complete | Technical Owner | Published model card |
+| Explainability report | Technical Owner | SHAP/LIME analysis report |
+
+### Gate 3: Legal & Compliance
+
+| Check | Requirement |
+|---|---|
+| Regulatory mapping | All applicable regulations identified and addressed |
+| Privacy review | GDPR/CCPA impact assessment for personal data |
+| Legal sign-off | Legal counsel review for high-risk systems |
+| Industry-specific review | HIPAA (healthcare) / SR 11-7 (finance) / state regs |
+
+### Gate 4: Infrastructure Readiness
+
+| Check | Requirement |
+|---|---|
+| Monitoring configured | Alerts set for performance degradation and drift |
+| Logging enabled | All inputs/outputs/decisions logged with retention policy |
+| Rollback tested | Rollback to previous version validated in staging |
+| Runbook complete | On-call runbook published and reviewed |
 
 ---
 
-## Non-goals
+## NIST AI RMF Alignment
 
-- This is not a compliance template or legal document
-- This does not include proprietary or employer-specific content
-- This is not a product — it is a reference framework to adapt
+This framework implements the NIST AI RMF **Measure** and **Manage** functions:
+
+- **MS.1** — AI risk identification methods applied at each gate
+- **MS.2** — Ongoing monitoring activated at deployment gate
+- **MS.3** — Evaluation techniques applied at technical validation gate
+- **MG.2** — Risk treatment plans completed before governance gate
+- **MG.4** — Rollback and recovery procedures validated at infrastructure gate
+
+Full mapping: [docs/nist-rmf-mapping.md](docs/nist-rmf-mapping.md)
 
 ---
 
-## Related repositories
+## Related Tools
 
-This repository is part of a connected toolkit for responsible AI operations:
+| Tool | Purpose | Link |
+|---|---|---|
+| `airc` CLI | Validate release checklist YAML from command line | [ai-release-readiness-checklist](https://github.com/simaba/ai-release-readiness-checklist) |
+| Regulated AI Starter Kit | Template repo with pre-configured governance | [regulated-ai-starter-kit](https://github.com/simaba/regulated-ai-starter-kit) |
+| Enterprise Governance Playbook | Full organizational governance playbook | [enterprise-ai-governance-playbook](https://github.com/simaba/enterprise-ai-governance-playbook) |
+
+---
+
+## Ecosystem
 
 | Repository | Purpose |
-|-----------|---------|
-| [Enterprise AI Governance Playbook](https://github.com/simaba/enterprise-ai-governance-playbook) | End-to-end AI operating model from intake to improvement |
-| [AI Release Governance Framework](https://github.com/simaba/ai-release-governance-framework) | Risk-based release gates for AI systems |
-| [AI Release Readiness Checklist](https://github.com/simaba/ai-release-readiness-checklist) | Risk-tiered pre-release checklists with CLI tool |
-| [AI Accountability Design Patterns](https://github.com/simaba/ai-accountability-design-patterns) | Patterns for human oversight and escalation |
-| [Multi-Agent Governance Framework](https://github.com/simaba/multi-agent-governance-framework) | Roles, authority, and escalation for agent systems |
-| [Multi-Agent Orchestration Patterns](https://github.com/simaba/multi-agent-orchestration-patterns) | Sequential, parallel, and feedback-loop patterns |
-| [AI Agent Evaluation Framework](https://github.com/simaba/ai-agent-evaluation-framework) | System-level evaluation across 5 dimensions |
-| [Agent System Simulator](https://github.com/simaba/agent-system-simulator) | Runnable multi-agent simulator with governance controls |
-| [LLM-powered Lean Six Sigma](https://github.com/simaba/LLM-powered-Lean-Six-Sigma) | AI copilot for structured process improvement |
+|---|---|
+| [enterprise-ai-governance-playbook](https://github.com/simaba/enterprise-ai-governance-playbook) | End-to-end governance playbook |
+| [ai-release-readiness-checklist](https://github.com/simaba/ai-release-readiness-checklist) | Release gate framework + CLI |
+| [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-ai-rmf-implementation-guide) | NIST AI RMF practitioner guide |
+| [awesome-ai-governance](https://github.com/simaba/awesome-ai-governance) | Curated governance resources |
 
----
-
-*Shared in a personal capacity. Open to collaborations and feedback — connect on [LinkedIn](https://linkedin.com/in/simaba) or [Medium](https://medium.com/@bagheri.sima).*
+*Maintained by [Sima Bagheri](https://github.com/simaba) · Connect on [LinkedIn](https://www.linkedin.com/in/simabagheri)*
