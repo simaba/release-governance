@@ -4,16 +4,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Discussions](https://img.shields.io/badge/Discussions-Join-7289da?style=flat-square&logo=github)](https://github.com/simaba/release-governance/discussions)
 
-A structured framework for governing the full release lifecycle of AI systems —
-from initial development through production deployment and ongoing monitoring —
-with specific guidance for regulated industries.
+A structured framework for governing the full release lifecycle of AI systems, from initial development through production deployment and ongoing monitoring, with specific guidance for regulated industries.
 
 ---
 
 ## The Problem
 
-Most software release frameworks were not designed for AI systems. AI releases
-differ from traditional software releases in critical ways:
+Most software release frameworks were not designed for AI systems. AI releases differ from traditional software releases in critical ways:
 
 - **Non-deterministic behavior** — the same model can produce different outputs
 - **Data dependency** — model performance degrades as the world changes
@@ -27,7 +24,7 @@ This framework addresses each of these differences with structured governance ga
 
 ## Framework Structure
 
-```
+```text
 AI Release Lifecycle
 │
 ├── 1. PRE-DEVELOPMENT
@@ -119,9 +116,9 @@ Full mapping: [docs/nist-rmf-mapping.md](docs/nist-rmf-mapping.md)
 
 | Tool | Purpose | Link |
 |---|---|---|
-| `airc` CLI | Validate release checklist YAML from command line | [ai-release-readiness-checklist](https://github.com/simaba/release-checklist) |
-| Regulated AI Starter Kit | Template repo with pre-configured governance | [regulated-ai-starter-kit](https://github.com/simaba/regulated-ai) |
-| Enterprise Governance Playbook | Full organizational governance playbook | [enterprise-ai-governance-playbook](https://github.com/simaba/governance-playbook) |
+| Release checklist CLI | Validate release checklist YAML from the command line | [release-checklist](https://github.com/simaba/release-checklist) |
+| Regulated AI starter repository | Starting point for governance-ready AI delivery | [regulated-ai](https://github.com/simaba/regulated-ai) |
+| Enterprise governance playbook | Full organizational governance playbook | [governance-playbook](https://github.com/simaba/governance-playbook) |
 
 ---
 
@@ -129,9 +126,9 @@ Full mapping: [docs/nist-rmf-mapping.md](docs/nist-rmf-mapping.md)
 
 | Repository | Purpose |
 |---|---|
-| [enterprise-ai-governance-playbook](https://github.com/simaba/governance-playbook) | End-to-end governance playbook |
-| [ai-release-readiness-checklist](https://github.com/simaba/release-checklist) | Release gate framework + CLI |
-| [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-rmf-guide) | NIST AI RMF practitioner guide |
-| [awesome-ai-governance](https://github.com/simaba/ai-prism) | Curated governance resources |
+| [governance-playbook](https://github.com/simaba/governance-playbook) | End-to-end governance playbook |
+| [release-checklist](https://github.com/simaba/release-checklist) | Release gate framework and CLI |
+| [nist-rmf-guide](https://github.com/simaba/nist-rmf-guide) | NIST AI RMF practitioner guide |
+| [ai-prism](https://github.com/simaba/ai-prism) | Curated governance resources |
 
 *Maintained by [Sima Bagheri](https://github.com/simaba) · Connect on [LinkedIn](https://www.linkedin.com/in/simaba/)*
