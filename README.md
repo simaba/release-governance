@@ -1,6 +1,6 @@
 # AI Release Governance Framework
 
-[![NIST AI RMF](https://img.shields.io/badge/NIST%20AI%20RMF-Aligned-0055A4?style=flat-square)](https://airc.nist.gov/home)
+[![NIST AI RMF](https://img.shields.io/badge/NIST%20AI%20RMF-Informed-0055A4?style=flat-square)](https://airc.nist.gov/home)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Discussions](https://img.shields.io/badge/Discussions-Join-7289da?style=flat-square&logo=github)](https://github.com/simaba/release-governance/discussions)
 
@@ -18,6 +18,10 @@ Use this repository when you need the **release-stage lifecycle framework** for 
 Do **not** start here if you need a working config validator. Use [`release-checklist`](https://github.com/simaba/release-checklist) for that.
 
 Do **not** start here if you need the broader organizational operating model. Use [`governance-playbook`](https://github.com/simaba/governance-playbook).
+
+## Maturity
+
+This is a **practitioner framework** for structuring AI release governance. It is intended for planning, review, and operating-model design. It is not a certified release process, compliance product, safety case, or substitute for formal legal, privacy, security, regulatory, or safety review.
 
 ## Framework structure
 
@@ -59,10 +63,10 @@ AI Release Lifecycle
 | Check | Requirement | Tooling |
 |---|---|---|
 | Model performance | Meets accuracy/F1 threshold on holdout set | pytest, MLflow |
-| Bias evaluation | Disparate impact ratio ≥ 0.80 across subgroups | Fairlearn, AI Fairness 360 |
+| Bias evaluation | Disparate impact ratio reviewed across relevant subgroups | Fairlearn, AI Fairness 360 |
 | Adversarial testing | Red-team report completed | Microsoft PyRIT, Giskard |
-| Latency / throughput | P99 latency ≤ SLA threshold under load | Locust, k6 |
-| Security scan | No critical vulnerabilities in dependencies | Snyk, Dependabot |
+| Latency / throughput | P99 latency within configured SLA under load | Locust, k6 |
+| Security scan | No unresolved critical vulnerabilities in dependencies | Snyk, Dependabot |
 
 ### Gate 2: Governance approval
 
@@ -71,7 +75,7 @@ AI Release Lifecycle
 | AI governance review | AI Governance Lead | Signed governance checklist |
 | Risk assessment complete | Risk Officer | Risk register entry |
 | Model card complete | Technical Owner | Published model card |
-| Explainability report | Technical Owner | SHAP/LIME analysis report |
+| Explainability report | Technical Owner | SHAP/LIME or alternative explanation report where applicable |
 
 ### Gate 3: Legal and compliance
 
@@ -91,11 +95,17 @@ AI Release Lifecycle
 | Rollback tested | Rollback to previous version validated in staging |
 | Runbook complete | On-call runbook published and reviewed |
 
-## NIST AI RMF alignment
+## NIST AI RMF mapping
 
 This framework primarily operationalizes the **Measure** and **Manage** functions.
 
 Full mapping: [docs/nist-rmf-mapping.md](docs/nist-rmf-mapping.md)
+
+## Scope and disclaimer
+
+This repository is shared in a personal capacity. It is not legal advice, compliance certification, regulatory approval, safety certification, or official guidance from NIST, the EU, ISO, or any employer.
+
+References to NIST AI RMF, release gates, risk thresholds, regulatory review, and industry-specific obligations are practitioner mappings and examples. Always verify against official sources and internal requirements before using this framework for compliance, safety, or release decisions.
 
 ## Related repositories
 
