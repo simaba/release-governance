@@ -6,22 +6,21 @@
 
 A structured framework for governing the release lifecycle of AI systems, from development through deployment, monitoring, and retirement.
 
-## Choose this repo when
-
-Use this repository when you need the **release-stage lifecycle framework** for AI systems:
-
-- release gates
-- stage-specific approval criteria
-- deployment readiness structure
-- post-release governance expectations
-
-Do **not** start here if you need a working config validator. Use [`release-checklist`](https://github.com/simaba/release-checklist) for that.
-
-Do **not** start here if you need the broader organizational operating model. Use [`governance-playbook`](https://github.com/simaba/governance-playbook).
-
 ## Maturity
 
 This is a **practitioner framework** for structuring AI release governance. It is intended for planning, review, and operating-model design. It is not a certified release process, compliance product, safety case, or substitute for formal legal, privacy, security, regulatory, or safety review.
+
+## Purpose
+
+Use this repository when you need the release-stage lifecycle framework for AI systems:
+
+- release gates
+- stage-specific approval criteria
+- deployment-readiness structure
+- post-release governance expectations
+
+For a working config validator, use [`release-checklist`](https://github.com/simaba/release-checklist).
+For the broader organizational operating model, use [`governance-playbook`](https://github.com/simaba/governance-playbook).
 
 ## Framework structure
 
@@ -62,10 +61,10 @@ AI Release Lifecycle
 
 | Check | Requirement | Tooling |
 |---|---|---|
-| Model performance | Meets accuracy/F1 threshold on holdout set | pytest, MLflow |
-| Bias evaluation | Disparate impact ratio reviewed across relevant subgroups | Fairlearn, AI Fairness 360 |
-| Adversarial testing | Red-team report completed | Microsoft PyRIT, Giskard |
-| Latency / throughput | P99 latency within configured SLA under load | Locust, k6 |
+| Model performance | Meets defined performance threshold on a representative holdout set | pytest, MLflow |
+| Bias evaluation | Relevant subgroup performance and fairness risks reviewed | Fairlearn, AI Fairness 360 |
+| Adversarial testing | Red-team or abuse-case review completed where applicable | Microsoft PyRIT, Giskard |
+| Latency / throughput | P99 latency within configured service expectations under load | Locust, k6 |
 | Security scan | No unresolved critical vulnerabilities in dependencies | Snyk, Dependabot |
 
 ### Gate 2: Governance approval
@@ -81,17 +80,17 @@ AI Release Lifecycle
 
 | Check | Requirement |
 |---|---|
-| Regulatory mapping | Applicable regulations identified and addressed |
+| Regulatory mapping | Applicable regulations identified and reviewed |
 | Privacy review | Privacy impact assessment completed where required |
 | Legal sign-off | Legal counsel review for high-risk systems |
-| Industry-specific review | Domain-specific obligations addressed |
+| Industry-specific review | Domain-specific obligations reviewed |
 
 ### Gate 4: Infrastructure readiness
 
 | Check | Requirement |
 |---|---|
 | Monitoring configured | Alerts set for degradation and drift |
-| Logging enabled | Inputs, outputs, and decisions logged with retention policy |
+| Logging enabled | Inputs, outputs, and decisions logged under an approved retention policy |
 | Rollback tested | Rollback to previous version validated in staging |
 | Runbook complete | On-call runbook published and reviewed |
 
@@ -113,7 +112,7 @@ References to NIST AI RMF, release gates, risk thresholds, regulatory review, an
 |---|---|
 | [release-checklist](https://github.com/simaba/release-checklist) | Working CLI validator for YAML-based release configs |
 | [governance-playbook](https://github.com/simaba/governance-playbook) | Broader organizational operating model |
-| [regulated-ai](https://github.com/simaba/regulated-ai) | Starter repo with governance and release artifacts |
+| [regulated-ai](https://github.com/simaba/regulated-ai) | Starter repository with governance and release artifacts |
 | [nist-rmf-guide](https://github.com/simaba/nist-rmf-guide) | Practitioner implementation guide |
 
 *Maintained by [Sima Bagheri](https://github.com/simaba)*
