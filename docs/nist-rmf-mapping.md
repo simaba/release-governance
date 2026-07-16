@@ -1,87 +1,134 @@
-# NIST AI RMF Cross-Reference
+# NIST AI RMF Practitioner Cross-Reference
 
-This document maps the content in this repository to the corresponding
-NIST AI Risk Management Framework (AI RMF 1.0) functions, categories,
-and subcategories.
+This document explains how the release-governance artifacts can support internal work related to the NIST AI Risk Management Framework (AI RMF 1.0).
 
-**Full NIST AI RMF implementation guide:** [nist-ai-rmf-implementation-guide](https://github.com/simaba/nist-rmf-guide)
+It is not an official NIST mapping, assessment, profile, conformity determination, or claim that the repository implements every category or subcategory. Exact applicability depends on the organization, system context, evidence, and how the artifacts are actually used.
+
+Use the official NIST material as the authoritative source. Treat this page as a navigation aid for practitioner discussions.
+
+## Cross-reference by function
+
+### GOVERN
+
+Release-governance artifacts can support governance work by recording:
+
+- release and residual-risk decision authority;
+- control, evidence, incident, exception, and rollback owners;
+- review outcomes and conditions;
+- change and invalidation triggers;
+- exception expiry and renewal;
+- evidence retention and accountability expectations.
+
+Relevant repository artifact:
+
+- [`release-decision-record.md`](release-decision-record.md)
+
+What this repository does not establish on its own:
+
+- enterprise policy approval;
+- board or executive oversight;
+- workforce competence;
+- supplier governance;
+- legal or regulatory applicability;
+- organization-wide risk culture.
+
+### MAP
+
+Release preparation can support contextualization by documenting:
+
+- intended use and prohibited uses;
+- users and affected populations;
+- deployment environment and geography;
+- model, prompt, retrieval, data, tool, permission, and action scope;
+- foreseeable misuse and failure consequences;
+- reversibility and operational dependencies;
+- rollout population and exposure limit.
+
+What this repository does not establish on its own:
+
+- complete stakeholder impact assessment;
+- authoritative categorization of all risks;
+- scientific validity of the system;
+- complete legal or societal context;
+- representation of every affected group.
+
+### MEASURE
+
+Release evidence can support measurement work by documenting:
+
+- evaluation scope and operating-population assumptions;
+- hard-gate and quality-measure definitions;
+- evaluator method and limitations;
+- security, privacy, safety, and operational control tests;
+- slice and failure analysis;
+- uncertainty, exclusions, and evidence freshness;
+- monitoring and regression evidence.
+
+Companion repository:
+
+- [`agent-eval`](https://github.com/simaba/agent-eval)
+
+What this repository does not establish on its own:
+
+- benchmark validity;
+- calibrated thresholds;
+- evaluator reliability;
+- complete safety or security testing;
+- sufficient statistical power;
+- production representativeness.
+
+### MANAGE
+
+Release decisions and follow-through can support risk treatment by recording:
+
+- release, conditional release, hold, rejection, or deferral;
+- blockers, required actions, conditions, exceptions, and observations;
+- residual-risk acceptance;
+- staged exposure and expansion criteria;
+- monitoring and stop triggers;
+- rollback, containment, recovery, and incident ownership;
+- expiry and re-evaluation conditions.
+
+What this repository does not establish on its own:
+
+- that selected treatments are effective;
+- that residual risk is legally or ethically acceptable;
+- that operational teams can execute the response;
+- that downstream impacts are fully remediated;
+- that the decision authority is appropriate for every jurisdiction or harm.
+
+## Artifact-to-question view
+
+| Release-governance question | AI RMF function most directly supported | Evidence still needed outside the template |
+|---|---|---|
+| Who owns the release and residual-risk decision? | Govern | actual organizational authority and policy |
+| What system, users, actions, and environment are in scope? | Map | validated context and affected-stakeholder input |
+| Which hard gates and measures support the decision? | Measure | valid test design, data, evaluator, and results |
+| What failures, uncertainty, and evidence gaps remain? | Measure / Manage | investigation and domain judgment |
+| Which conditions, exceptions, or residual risks are accepted? | Govern / Manage | authorized decision and enforceable controls |
+| How can exposure be stopped, contained, or rolled back? | Manage | tested operational capability |
+| Which changes invalidate the decision? | Govern / Manage | working change-detection and regression process |
+
+## How to use this cross-reference
+
+1. Start with the official AI RMF function, category, and subcategory relevant to your organization.
+2. Identify which internal decision or evidence need it creates.
+3. Use repository artifacts only where they help record that work.
+4. Link to authoritative policies, tests, assessments, and owners outside the repository.
+5. Record gaps instead of marking a category implemented because a template exists.
+6. Review the mapping when NIST guidance, the system, or the organizational process changes.
+
+## Common misuse
+
+Avoid statements such as:
+
+- “The repository is NIST compliant.”
+- “Completing the template implements the AI RMF.”
+- “A release decision record proves the control is effective.”
+- “A cross-reference is an audit result.”
+
+A template can improve structure and traceability. The quality of the evidence, decisions, controls, and outcomes determines whether the work is meaningful.
 
 ---
 
-## NIST AI RMF Function Overview
-
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   GOVERN    │ ──► │     MAP     │ ──► │   MEASURE   │ ──► │   MANAGE    │
-│             │     │             │     │             │     │             │
-│ GV.1–GV.6  │     │ MP.1–MP.5  │     │ MS.1–MS.5  │     │ MG.1–MG.4  │
-└─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
-```
-
----
-
-## How This Repository Implements NIST AI RMF
-
-### GOVERN (GV) — Policies and Accountability
-
-| NIST Subcategory | Implementation in This Repository |
-|---|---|
-| GV.1.1 — Organizational policies | Governance framework documents serve as organizational policy templates |
-| GV.1.3 — Prohibited uses defined | Use case classification includes explicit prohibited patterns |
-| GV.4.1 — Human oversight defined | Human-in-the-loop requirements documented per pattern |
-| GV.6.1 — AI systems monitored | Monitoring requirements specified per design pattern |
-
-### MAP (MP) — Risk Contextualization
-
-| NIST Subcategory | Implementation in This Repository |
-|---|---|
-| MP.1.1 — Intended use documented | Each pattern includes intended use scope and limitations |
-| MP.2.1 — Scientific basis reviewed | Patterns include evidence of effectiveness and known limitations |
-| MP.3.1 — Risk identification | Risk considerations documented per pattern/framework element |
-| MP.4.1 — Impact assessment | Stakeholder impact analysis included in high-risk patterns |
-| MP.5.1 — Trustworthy AI characteristics | Patterns mapped to NIST's seven trustworthy AI characteristics |
-
-### MEASURE (MS) — Risk Analysis
-
-| NIST Subcategory | Implementation in This Repository |
-|---|---|
-| MS.1.1 — AI risk identification | Risk categories enumerated with likelihood and impact |
-| MS.2.3 — AI system monitoring | Monitoring metrics and alerting thresholds defined |
-| MS.3.1 — Evaluation techniques | Evaluation approaches specified per framework element |
-| MS.5.1 — Bias evaluation | Fairness and bias considerations documented |
-
-### MANAGE (MG) — Risk Response
-
-| NIST Subcategory | Implementation in This Repository |
-|---|---|
-| MG.2.1 — Treatments defined | Mitigation strategies specified for each identified risk |
-| MG.4.1 — Rollback procedures | Recovery and fallback procedures documented |
-| MG.3.2 — Residual risk accepted | Residual risk acknowledgment process defined |
-
----
-
-## EU AI Act Alignment
-
-For organizations subject to the EU AI Act, see the cross-reference mapping:
-[nist-ai-rmf-implementation-guide/docs/eu-ai-act-mapping.md](https://github.com/simaba/nist-rmf-guide/blob/main/docs/eu-ai-act-mapping.md)
-
----
-
-## The Seven Characteristics of Trustworthy AI (NIST)
-
-Each component of this repository addresses one or more of these characteristics:
-
-| Characteristic | Addressed By |
-|---|---|
-| Accountable | Governance framework, role definitions, audit trails |
-| Explainable | Documentation requirements, decision logging patterns |
-| Interpretable | Output interpretation guidelines, confidence requirements |
-| Privacy-Enhanced | Data handling patterns, PII processing guidelines |
-| Reliable | Performance monitoring, regression testing requirements |
-| Safe | Safety evaluation checklists, failure mode analysis |
-| Fair | Bias evaluation requirements, subgroup testing |
-
----
-
-*Maintained by [Sima Bagheri](https://github.com/simaba) · Not affiliated with NIST.*
-*For authoritative guidance, refer to [airc.nist.gov](https://airc.nist.gov)*
+*Practitioner cross-reference maintained by [Sima Bagheri](https://github.com/simaba). Not affiliated with or endorsed by NIST.*
